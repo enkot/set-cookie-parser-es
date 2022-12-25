@@ -18,7 +18,7 @@
     "build": "unbuild",
     "dev": "vitest",
     "lint": "eslint --ext ts,mjs,cjs . && prettier -c src test",
-    "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+    "release": "pnpm test && pnpm build && pnpm publish && git push --follow-tags",
     "test": "pnpm lint && vitest run --coverage"
   },
   "keywords": [],
@@ -26,7 +26,6 @@
   "license": "ISC",
   "devDependencies": {
     "@vitest/coverage-c8": "^0.26.2",
-    "changelogen": "^0.4.0",
     "eslint": "^8.30.0",
     "eslint-config-unjs": "^0.0.3",
     "prettier": "^2.8.1",
