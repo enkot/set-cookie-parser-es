@@ -1,0 +1,36 @@
+{
+  "name": "set-cookie-parser-es",
+  "version": "1.0.1",
+  "description": "ESM port of set-cookie-parser with bundled types.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint --ext ts,mjs,cjs . && prettier -c src test",
+    "release": "pnpm test && pnpm build && changelogen --release && pnpm publish && git push --follow-tags",
+    "test": "pnpm lint && vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.26.2",
+    "changelogen": "^0.4.0",
+    "eslint": "^8.30.0",
+    "eslint-config-unjs": "^0.0.3",
+    "prettier": "^2.8.1",
+    "unbuild": "^1.0.2",
+    "vitest": "^0.25.8"
+  }
+}
