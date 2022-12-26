@@ -83,11 +83,11 @@ Set options.decodeValues to false to disable this feature.`,
 
 export function parse(
   input: string | string[],
-  options: SetCookieOptionsList
+  options?: SetCookieOptionsList
 ): SetCookieParseResultList;
 export function parse(
   input: string | string[],
-  options: SetCookieOptionsMap
+  options?: SetCookieOptionsMap
 ): SetCookieParseResultMap;
 export function parse(
   input: string | string[],
