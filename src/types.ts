@@ -20,8 +20,10 @@ export interface SetCookieOptionsMap {
   map?: true;
   silent?: boolean;
 }
-export type SetCookieOptions = SetCookieOptionsList | SetCookieOptionsMap
+export type SetCookieOptions = SetCookieOptionsList | SetCookieOptionsMap;
 
-export type SetCookieParseResultList = SetCookieValues[]
-export type SetCookieParseResultMap = { [key: string]: SetCookieValues }
-export type SetCookieParseResult = SetCookieParseResultList | SetCookieParseResultMap
+export type SetCookieParseResultList = SetCookieValues[];
+export type SetCookieParseResultMap = { [key: string]: SetCookieValues };
+export type SetCookieParseResult =
+  | SetCookieParseResultList
+  | SetCookieParseResultMap;
