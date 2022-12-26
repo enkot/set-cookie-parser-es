@@ -1,7 +1,11 @@
 import {
   SetCookieValues,
   SetCookieOptions,
+  SetCookieOptionsMap,
+  SetCookieOptionsList,
   SetCookieParseResult,
+  SetCookieParseResultList,
+  SetCookieParseResultMap
 } from "./types";
 import { isNonEmptyString, parseNameValuePair } from "./utils";
 
@@ -11,7 +15,7 @@ const defaultParseOptions = {
   silent: false,
 };
 
-export function parseString(setCookieValue, options?: SetCookieOptions) {
+export function parseString(setCookieValue, options: SetCookieOptions = {}) {
   options = { ...defaultParseOptions, ...options };
 
   const parts = setCookieValue
@@ -77,14 +81,13 @@ Set options.decodeValues to false to disable this feature.`,
   return cookie;
 }
 
-export function parse(
-  input: string | string[],
-  options?: SetCookieOptions
-): SetCookieParseResult {
+export function parse(input: string | string[], options: SetCookieOptionsList): SetCookieParseResultList
+export function parse(input: string | string[], options: SetCookieOptionsMap): SetCookieParseResultMap
+export function parse(input: string | string[], options: SetCookieOptions = {}): SetCookieParseResult {
   options = { ...defaultParseOptions, ...options };
 
   if (!input) {
-    return !options.map ? [] : {};
+    return options.map ? {} : [];
   }
 
   if (!Array.isArray(input)) {

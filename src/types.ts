@@ -10,14 +10,18 @@ export interface SetCookieValues {
   secure?: boolean | undefined;
 }
 
-export type SetCookieParseResult =
-  | SetCookieValues[]
-  | {
-      [key: string]: SetCookieValues;
-    };
-
-export interface SetCookieOptions {
+export interface SetCookieOptionsList {
   decodeValues?: boolean;
-  map?: boolean;
+  map?: false;
   silent?: boolean;
 }
+export interface SetCookieOptionsMap {
+  decodeValues?: boolean;
+  map?: true;
+  silent?: boolean;
+}
+export type SetCookieOptions = SetCookieOptionsList | SetCookieOptionsMap
+
+export type SetCookieParseResultList = SetCookieValues[]
+export type SetCookieParseResultMap = { [key: string]: SetCookieValues }
+export type SetCookieParseResult = SetCookieParseResultList | SetCookieParseResultMap
