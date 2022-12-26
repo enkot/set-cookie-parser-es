@@ -8,6 +8,7 @@ import {
   SetCookieParseResultMap,
 } from "./types";
 import { isNonEmptyString, parseNameValuePair } from "./utils";
+export * from "./types";
 
 const defaultParseOptions = {
   decodeValues: true,

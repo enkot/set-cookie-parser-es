@@ -1,6 +1,6 @@
 {
   "name": "set-cookie-parser-es",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ESM port of set-cookie-parser with bundled types.",
   "homepage": "https://github.com/enkot/set-cookie-parser-es",
   "repository": "enkot/set-cookie-parser-es",
